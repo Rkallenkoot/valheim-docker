@@ -21,7 +21,7 @@ pub fn install(app_id: i64) -> io::Result<ExitStatus> {
 
   let login = "+login anonymous".to_string();
   let force_install_dir = format!("+force_install_dir {}", get_working_dir());
-  let app_update = format!("+app_update {}", app_id);
+  let app_update = format!("+app_update {} -beta public-test -betapassword yesimadebackups", app_id);
   let mut steamcmd = steamcmd_command();
   let install_command = steamcmd
     .args(&[force_install_dir, login, app_update])
